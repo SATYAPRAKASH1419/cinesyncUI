@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -45,7 +45,7 @@ export function TestimonialCarousel() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold font-display tracking-tighter sm:text-5xl text-text-primary">Loved by Watchers</h2>
           <p className="max-w-[600px] text-text-secondary md:text-xl">
-            Don't just take our word for it. Here's what our community says.
+            Don&apos;t just take our word for it. Here&apos;s what our community says.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function TestimonialCarousel() {
                     <CardContent className="p-8 md:p-10 flex flex-col items-center text-center">
                        <Quote className="h-10 w-10 text-brand-primary/20 mb-6" />
                        <p className="text-lg md:text-xl text-text-primary italic mb-8">
-                          "{testimonials[index].quote}"
+                          &ldquo;{testimonials[index].quote}&rdquo;
                        </p>
                        <div className="flex items-center gap-4">
                           <Avatar className="h-12 w-12 border-2 border-brand-primary/20">

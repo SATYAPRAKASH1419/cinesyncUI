@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
-  Menu, Globe, Play, Users, 
-  Sparkles, Settings, LogIn, ChevronDown,
+  Menu, Globe, Play, 
+  Settings, 
   MonitorPlay
 } from "lucide-react";
 import { useState, useEffect } from "react";
