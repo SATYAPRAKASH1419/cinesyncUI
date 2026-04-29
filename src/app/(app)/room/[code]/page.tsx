@@ -3,22 +3,20 @@
 import { useState, useEffect, useRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import {
-  Play, Pause, Volume2, VolumeX, Maximize, Minimize,
-  SmilePlus, Send, Settings, UserPlus, Users, MessageSquare,
-  Crown, Star, Wifi, ArrowLeft, Copy, Check, Radio,
-  SkipForward, SkipBack, Share2, MoreVertical, LayoutPanelLeft,
-  ChevronRight, ChevronLeft, Heart, Flame, ThumbsUp, Laugh,
-  UserCheck, ShieldCheck, Zap, AlertCircle,
+import { 
+   Play, Pause, 
+  Settings, UserPlus, 
+  Crown, ArrowLeft, Copy, Check,
+  Maximize, Minimize,
+  ChevronRight, ChevronLeft,
+  ShieldCheck, Zap, AlertCircle,
   Mic, MicOff, Video as VideoIcon, VideoOff, Pin, PinOff,
-  ScreenShare, PhoneOff, Move, PanelRightClose, PanelRightOpen,
-  Lock, Unlock, MessageCircleOff
+  ScreenShare, Send, LayoutPanelLeft,
+  MessageCircleOff
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -119,18 +117,14 @@ export default function RoomPage({ params }: { params: { code: string } }) {
   // UI State
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState<"chat" | "participants">("chat");
-  const [syncVisible, setSyncVisible] = useState(true);
   const [copied, setCopied] = useState(false);
   
   // Video State
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(42);
-  const [volume, setVolume] = useState(80);
-  const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   
   // Video Chat State
-  const [videoChatEnabled, setVideoChatEnabled] = useState(true);
   const [cameraOn, setCameraOn] = useState(false);
   const [micOn, setMicOn] = useState(false);
   const [screenSharing, setScreenSharing] = useState(false);
@@ -154,9 +148,7 @@ export default function RoomPage({ params }: { params: { code: string } }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-tier', 'premium');
-    const t = setTimeout(() => setSyncVisible(false), 5000);
     return () => {
-        clearTimeout(t);
         document.documentElement.removeAttribute('data-tier');
     };
   }, []);
@@ -294,7 +286,7 @@ export default function RoomPage({ params }: { params: { code: string } }) {
             <ReactionOverlay reactions={reactions} />
 
             {/* PIP / PINNED BOX */}
-            {videoChatEnabled && pinnedUser && (
+            {pinnedUser && (
                 <div className="absolute right-6 top-6 w-64 aspect-video z-30 group/pip">
                     <div className="relative w-full h-full bg-[#14182B]/40 backdrop-blur-3xl rounded-2xl border-2 border-[#6C63FF]/50 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
                         <div className="w-full h-full relative bg-black/60 flex items-center justify-center">

@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { 
-  Calendar, Search, Filter, Play, Users, 
-  Clock, Bell, Share2, Star, ChevronRight,
-  TrendingUp, Sparkles, Radio, Heart, Plus
+  Bell, Share2, Star, ChevronRight,
+  TrendingUp, Plus
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // ── Types ─────────────────────────────────────────────────────────
@@ -320,7 +319,7 @@ export default function EventsPage() {
 }
 
 // ── Icons ──
-function CheckCircle2(props: any) {
+function CheckCircle2(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -340,7 +339,7 @@ function CheckCircle2(props: any) {
   )
 }
 
-function MonitorPlay(props: any) {
+function MonitorPlay(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

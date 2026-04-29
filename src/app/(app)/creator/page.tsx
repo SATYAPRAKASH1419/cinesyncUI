@@ -6,13 +6,12 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Users, DollarSign, Calendar, TrendingUp, Plus, 
-  BarChart3, Video, Clock, ChevronRight, LayoutDashboard,
-  Settings, Sliders, Play, HardDrive, Sparkles,
-  ArrowUpRight, ArrowDownRight, MoreHorizontal, Radio,
+  BarChart3, Video, Clock, LayoutDashboard,
+  HardDrive, Sparkles,
+  ArrowUpRight, ArrowDownRight, MoreHorizontal,
   Wallet, Headphones, MessageSquare, Globe, Search,
-  Filter, Download, ExternalLink, ShieldCheck, Zap,
-  Film, Trash2, Edit3, Eye, CalendarDays, PieChart,
-  Heart
+  Zap,
+  Film, Trash2, Edit3, Heart
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -25,7 +24,7 @@ interface StatCardProps {
   value: string;
   change: string;
   isPositive: boolean;
-  icon: any;
+  icon: React.ElementType;
   color: string;
 }
 
@@ -595,7 +594,7 @@ export default function CreatorStudio() {
 }
 
 // ── Icons ──
-function CheckCircle2(props: any) {
+function CheckCircle2(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

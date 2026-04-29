@@ -8,12 +8,12 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
-  User, Palette, Bell, Shield, CreditCard, Download, 
+  User, Palette, Bell, Shield, CreditCard, 
   Crown, Zap, Monitor, Globe, Mail, Lock, LogOut,
-  ChevronRight, Sparkles, CheckCircle2, Sliders, PlayCircle, Users,
+  CheckCircle2, PlayCircle, Users, Sparkles,
   MessageSquare, Trash2, History, Languages,
-  Eye, EyeOff, Smartphone, Laptop, Tablet, AlertCircle, Info,
-  Search, ExternalLink, HardDrive, Plus
+  Eye, Smartphone, Laptop, AlertCircle,
+  HardDrive
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -24,7 +24,7 @@ type SectionId = "profile" | "appearance" | "notifications" | "privacy" | "subsc
 interface Section {
   id: SectionId;
   label: string;
-  icon: any;
+  icon: React.ElementType;
   description: string;
 }
 
@@ -55,7 +55,15 @@ function SectionHeader({ title, description }: { title: string; description: str
   );
 }
 
-function ToggleItem({ label, description, icon: Icon, checked, onChange }: { label: string; description: string; icon?: any; checked?: boolean; onChange?: (v: boolean) => void }) {
+interface ToggleItemProps {
+  label: string;
+  description: string;
+  icon?: React.ElementType;
+  checked?: boolean;
+  onChange?: (v: boolean) => void;
+}
+
+function ToggleItem({ label, description, icon: Icon, checked, onChange }: ToggleItemProps) {
     return (
         <div className="flex items-center justify-between py-4 group">
             <div className="flex items-center gap-4">

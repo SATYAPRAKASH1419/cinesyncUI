@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, UserPlus, LogIn, UserCheck, MoreHorizontal } from "lucide-react";
+import { Search, UserPlus, LogIn, UserCheck } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Play, ExternalLink, Flame, Info } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 
 type Platform = "netflix" | "hotstar" | "prime";

@@ -1,25 +1,30 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { 
-  Play, Users, Mic, MonitorUp, Video, 
-  ChevronRight, Sparkles, Globe, ShieldCheck, Zap,
-  Star, Heart, MessageSquare, Clapperboard, Radio,
-  Search, Plus, Monitor, Smartphone, Airplay,
-  Repeat, Smile, Headphones, Tv, MousePointer2, SmartphoneIcon,
-  Check, Layers, Box, Activity, MapPin, Cpu
+  Play, Users, Mic, Video, 
+  Globe, Zap,
+  Star, Heart, Monitor, Airplay,
+  Repeat, Tv, SmartphoneIcon,
+  Activity, MapPin
 } from "lucide-react";
-import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { PricingSection } from "@/components/home/PricingSection";
 
-// ── Components ──────────────────────────────────────────────────
 
-function SegmentCard({ title, desc, icon: Icon, image, index }: any) {
+interface SegmentCardProps {
+  title: string;
+  desc: string;
+  icon: React.ElementType;
+  image: string;
+  index: number;
+}
+
+function SegmentCard({ title, desc, icon: Icon, image, index }: SegmentCardProps) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 30 }}
@@ -192,7 +197,7 @@ export default function Home() {
                   </div>
                   <h2 className="text-6xl md:text-[90px] font-display font-black text-white tracking-tighter uppercase leading-[0.8] mb-4">
                      Distance <br />
-                     <span className="text-[#6C63FF]">Doesn't Dsync.</span>
+                     <span className="text-[#6C63FF]">Doesn&apos;t Dsync.</span>
                   </h2>
                   <p className="text-[#8892B0] text-xl font-medium max-w-lg leading-relaxed">
                      We solved the desync frustration that has plagued co-watching for years. No more manual countdowns.
@@ -423,7 +428,7 @@ export default function Home() {
 }
 
 // ── Icons ──
-function ArrowRight(props: any) {
+function ArrowRight(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
